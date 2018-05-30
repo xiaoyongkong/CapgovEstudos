@@ -1,0 +1,5 @@
+package br.com.capgov.roupas.Dao;
+
+public class ConsultaRoupasDAO {
+
+}

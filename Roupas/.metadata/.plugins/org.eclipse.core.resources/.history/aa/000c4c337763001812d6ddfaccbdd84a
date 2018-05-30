@@ -1,0 +1,9 @@
+package br.com.capgov.roupas.Dao;
+
+public class ConsultaRoupasDAO {
+	
+	private String query;
+	
+	query = "Select * FROM roupas"
+	
+}
