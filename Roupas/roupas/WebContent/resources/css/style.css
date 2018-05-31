@@ -61,3 +61,10 @@ body {
     color: white;
     text-align: center;
 }
+
+  .firstColumn {
+       width: 150px;
+  }
+  .secondColumn {
+       width: 150px;
+  }

@@ -21,9 +21,30 @@
 	</div>
 	<br/>
 	<form>
-		<h:panelGrid columns = "2">
-			<br/>
-			<h:button value="Voltar" outcome="Default"/>
+		<h:panelGrid columns = "2" columnClasses="firstColumn,secondColumn">
+
+			<h:outputLabel value = "Insira Seu Cpf: "/>
+			<h:inputText maxlength="50" size="30" onkeydown="javascript: masc( this, maskCPF );"/>
+				
+			<h:outputLabel value = "Nome: "/>
+			<h:inputText maxlength="50" size="30" />
+			
+			<h:outputLabel value = "Descrição: " />
+			<h:inputTextarea cols="30" rows="5"/>
+				
+			<h:outputLabel value = "Tamanho: "/>
+			<h:inputText maxlength="5" size="17" />
+				
+			<h:outputLabel value = "Quantidade: "/>
+			<h:inputText maxlength="8" size="12" />
+				
+			<h:outputLabel value = "Quantidade: "/>
+			<h:inputText maxlength="8" size="12" />
+			
+			<center>
+				<h:commandButton value="Registrar" onclick="Registrado()"/>
+				<h:button value="Voltar" outcome="Default"/>
+			</center>
 			<br/>
 		</h:panelGrid>
 	</form>
