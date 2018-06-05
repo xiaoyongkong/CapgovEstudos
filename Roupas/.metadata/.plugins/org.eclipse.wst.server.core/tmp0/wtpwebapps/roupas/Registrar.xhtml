@@ -27,22 +27,22 @@
 			<h:inputText maxlength="50" size="30" onkeydown="javascript: masc( this, maskCPF );"/>
 				
 			<h:outputLabel value = "Nome: "/>
-			<h:inputText maxlength="50" size="30" />
+			<h:inputText maxlength="50" size="30" value="#{MBRoupasBean.nome}"/>
 			
 			<h:outputLabel value = "Descrição: " />
-			<h:inputTextarea cols="30" rows="5"/>
+			<h:inputTextarea cols="30" rows="5" value="#{MBRoupasBean.descricao}"/>
 				
 			<h:outputLabel value = "Tamanho: "/>
-			<h:inputText maxlength="5" size="17" />
+			<h:inputText maxlength="5" size="17" value="#{MBRoupasBean.tamanho}"/>
 				
 			<h:outputLabel value = "Quantidade: "/>
-			<h:inputText maxlength="8" size="12" />
+			<h:inputText maxlength="8" size="12" value="#{MBRoupasBean.quantidade}"/>
 				
-			<h:outputLabel value = "Quantidade: "/>
-			<h:inputText maxlength="8" size="12" />
+			<h:outputLabel value = "Valor: "/>
+			<h:inputText maxlength="8" size="12" value="#{MBRoupasBean.valor}"/>
 			
 			<center>
-				<h:commandButton value="Registrar" onclick="Registrado()"/>
+				<h:commandButton value="Registrar" actionListener="#{MBRoupasBean.registrar}"/>
 				<h:button value="Voltar" outcome="Default"/>
 			</center>
 			<br/>

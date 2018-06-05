@@ -14,7 +14,7 @@ public class ConexaoBanco {
 	
 	public Connection createConnection() throws SQLException {
 		
-		String url = "jdbc:mysql://localhost:3306/fes";
+		String url = "jdbc:mysql://localhost:3306/capgov";
 		String user = "root";
 		String password = "";
 		
@@ -29,6 +29,15 @@ public class ConexaoBanco {
 		ConexaoBanco con = new ConexaoBanco();
 		Statement stmt = con.createConnection().createStatement();
 		rs = stmt.executeQuery(sql);
+        return rs;
+    }
+	
+	public ResultSet insert(String sql) throws SQLException {
+        
+		ConexaoBanco con = new ConexaoBanco();
+		Statement stmt = con.createConnection().createStatement();
+		rs = stmt.executeQuery(sql);
+		System.out.println("Executou");
         return rs;
     }
 }

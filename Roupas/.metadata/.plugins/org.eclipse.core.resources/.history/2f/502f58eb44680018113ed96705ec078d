@@ -1,0 +1,12 @@
+package br.com.capgov.roupas.domain;
+
+public class Dados {
+	
+	private String cpf;
+	private String nome;
+	private String descricao;
+	private String tamanho;
+	private int quantidade;
+	private String valor;
+	
+}
