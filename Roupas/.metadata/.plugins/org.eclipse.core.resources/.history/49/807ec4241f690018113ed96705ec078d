@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"	
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/templates/ModeloSistema.xhtml">
+
+	<ui:define name="menu">
+		<ui:include src="/includes/MenuPrincipal.xhtml" />
+	</ui:define>
+	
+	<ui:define name="conteudo">
+		<h:form id="frmInserir">
+			<h:panelGrid id="pnlInserir" columns = "2" columnClasses="firstColumn,secondColumn">
+				<h:outputLabel value = "Insira Seu Cpf: "/>
+				<h:inputText maxlength="50" size="30"/>
+					
+				<h:outputLabel value = "Nome: "/>
+				<h:inputText maxlength="50" size="30" value="#{MBRoupasBean.roupaRegistro.nome}"/>
+				
+				<h:outputLabel value = "Descrição: " />
+				<h:inputTextarea cols="30" rows="5" value="#{MBRoupasBean.roupaRegistro.descricao}"/>
+					
+				<h:outputLabel value = "Tamanho: "/>
+				<h:inputText maxlength="5" size="17" value="#{MBRoupasBean.roupaRegistro.tamanho}"/>
+					
+				<h:outputLabel value = "Quantidade: "/>
+				<h:inputText maxlength="8" size="12" value="#{MBRoupasBean.roupaRegistro.quantidade}"/>
+					
+				<h:outputLabel value = "Valor: "/>
+				<h:inputText maxlength="8" size="12" value="#{MBRoupasBean.roupaRegistro.valor}"/>
+				<br/>
+			</h:panelGrid>
+				<p:commandButton value="Registrar" actionListener="#{MBRoupasBean.registrar()}" onclick="alert('Dados Inserido com Sucesso!') : window.location.reload();"/>
+		</h:form>			
+	</ui:define>
+			
+
+</ui:composition>

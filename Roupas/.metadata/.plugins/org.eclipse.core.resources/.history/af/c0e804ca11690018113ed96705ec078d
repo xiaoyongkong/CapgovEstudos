@@ -1,0 +1,35 @@
+package br.com.capgov.roupas.Dao;
+
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+
+import br.com.capgov.roupas.factory.*;
+import br.com.capgov.roupas.bean.*;
+import br.com.capgov.roupas.domain.*;
+
+public class ConsultaRoupasDAO {
+	
+	private String query;
+	private java.io.PrintWriter out;
+	ConexaoBanco con = new ConexaoBanco();
+	
+	public ResultSet ConsultaRoupa() throws SQLException, Exception {
+		
+		query = "SELECT * FROM roupas";
+		
+		
+		return con.select(sql);
+	
+	}
+	
+	public ResultSet InsereRoupa(Roupa roupa) throws SQLException, Exception{
+		
+		
+		query = "INSERT INTO roupas(nome, descricao, tamanho, quantidade, valor) VALUES ('" + roupa.getNome() + "','"
+				+ roupa.getDescricao() + "','" + roupa.getTamanho() + "'," + roupa.getQuantidade() + "," + roupa.getValor() + ")";
+			
+		return conexao.insert(query);
+	}
+	
+}

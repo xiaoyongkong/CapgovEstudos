@@ -12,6 +12,8 @@
 				return cpf
 			}
 			function Registrado(){
-				return alert("Registrado com Sucesso");
+				alert("Dados Inseridos com Sucesso");
+				return window.location.reload();
+				
 			}
 			

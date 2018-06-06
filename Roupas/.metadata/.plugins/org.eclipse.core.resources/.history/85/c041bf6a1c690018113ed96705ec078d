@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"	
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/templates/ModeloSistema.xhtml">
+	
+	<ui:define name="menu">
+		<ui:include src="/includes/MenuPrincipal.xhtml" />
+	</ui:define>
+		
+		<ui:define name="conteudo">
+			<p:dataTable  emptyMessage="Nenhum Dado encontrado" value="#{MBRoupasBean.roupaConsulta}" var="item">
+				<p:column headerText="Nome">
+					<h:outputText value="#{item.nome}" />
+				</p:column>
+				
+				<p:column headerText="Descricao">
+					<h:outputText value="#{item.descricao}" />
+				</p:column>
+				
+				<p:column headerText="Tamanho">
+					<h:outputText value="#{item.tamanho}" />
+				</p:column>
+				
+				<p:column headerText="Quantidade">
+					<h:outputText value="#{item.quantidade}" />
+				</p:column>
+				
+				<p:column headerText="Valor"/>
+					<h:outputText value="#{item.valor}" />
+			</p:dataTable>
+		</ui:define>
+				
+			<p:button value="Voltar" outcome="Default"/>
+
+
+</ui:composition>

@@ -1,0 +1,77 @@
+package br.com.capgov.roupas.bean;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+
+@ManagedBean(name = "MBRoupasBean")
+@ViewScoped
+
+public class RoupasBean {
+	
+	private String cpf;
+	private String nome;
+	private String descricao;
+	private String tamanho;
+	private int quantidade;
+	private float valor;
+	
+	public String getCpf() {
+		return cpf;
+	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getDescricao() {
+		return descricao;
+	}
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+	public String getTamanho() {
+		return tamanho;
+	}
+	public void setTamanho(String tamanho) {
+		this.tamanho = tamanho;
+	}
+	public int getQuantidade() {
+		return quantidade;
+	}
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}
+	public float getValor() {
+		return valor;
+	}
+	public void setValor(float valor) {
+		this.valor = valor;
+	}
+	
+	public RoupasBean(){
+	}
+
+	
+	public ResultSet registrar() throws SQLException{
+		
+		String query;
+		br.com.capgov.roupas.bean.RoupasBean roupasBean = new br.com.capgov.roupas.bean.RoupasBean();
+		br.com.capgov.roupas.factory.ConexaoBanco conexao = new br.com.capgov.roupas.factory.ConexaoBanco();
+		
+		query = "INSERT INTO roupas(nome, descricao, tamanho, quantidade, valor) VALUES ('" + roupasBean.getNome() + "','"
+				+ roupasBean.getDescricao() + "','" + roupasBean.getTamanho() + "'," + roupasBean.getQuantidade() + "," + roupasBean.getValor() + ")";
+		
+		System.out.println(query);
+		
+		return conexao.insert(query);
+		
+	}
+	
+}

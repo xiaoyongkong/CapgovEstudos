@@ -28,7 +28,7 @@ CREATE TABLE `roupas` (
   `descricao` varchar(45) DEFAULT NULL,
   `tamanho` varchar(5) DEFAULT NULL,
   `quantidade` int(11) DEFAULT NULL,
-  `valor` int(11) DEFAULT NULL,
+  `valor` float(11) DEFAULT NULL,
   PRIMARY KEY (`codRoupas`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;

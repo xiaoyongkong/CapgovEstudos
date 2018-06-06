@@ -1,0 +1,39 @@
+package br.com.capgov.roupas.bean;
+
+import br.com.capgov.roupas.domain.*;
+
+import java.sql.SQLException;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+
+@ManagedBean(name = "MBRoupasBean")
+@ViewScoped
+
+public class RoupasBean {
+	
+	private Roupa roupa = new Roupa();
+	private ListDataModel<Consulta> roupas;
+	
+	public Roupa getRoupa() {
+		return roupa;
+	}
+
+
+	public void setRoupa(Roupa roupa) {
+		this.roupa = roupa;
+	}
+
+
+	public void registrar(){
+		try{
+			br.com.capgov.roupas.Dao.ConsultaRoupasDAO dao = new br.com.capgov.roupas.Dao.ConsultaRoupasDAO();
+			dao.InsereRoupa(roupa);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+}
