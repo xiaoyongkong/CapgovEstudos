@@ -2,6 +2,7 @@ package br.com.capgov.roupas.bean;
 
 import br.com.capgov.roupas.Dao.ConsultaRoupasDAO;
 import br.com.capgov.roupas.domain.*;
+import br.com.capgov.roupas.util.FacesUtil;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -20,6 +21,9 @@ public class RoupasBean {
 	private ListDataModel<Roupa> roupaConsulta;
 	
 	public Roupa getRoupaRegistro() {
+		if(roupaRegistro == null){
+			roupaRegistro = new Roupa();
+		}
 		return roupaRegistro;
 	}
 
@@ -34,7 +38,7 @@ public class RoupasBean {
 	public void setRoupaConsulta(ListDataModel<Roupa> roupaConsulta) {
 		this.roupaConsulta = roupaConsulta;
 	}
-
+	
 	@PostConstruct
 	public void consultar(){
 		try {
@@ -50,13 +54,15 @@ public class RoupasBean {
 		}
 	}
 		
-	public void registrar(){
+	public void registrar() throws SQLException, Exception{
 		try{
 			ConsultaRoupasDAO dao = new ConsultaRoupasDAO();
 			dao.InsereRoupa(roupaRegistro);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			
+			FacesUtil.adicionarMsfInfo("Roupa registrada com sucesso");
+		} catch (RuntimeException e) {
+			// TODO: handle exception
+			FacesUtil.adicionarMsgErro("Erro ao tentar registrar: " + e.getMessage());
 		}
 	}
 

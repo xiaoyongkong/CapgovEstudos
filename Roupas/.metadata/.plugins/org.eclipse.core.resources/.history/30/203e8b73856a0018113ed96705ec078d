@@ -1,0 +1,72 @@
+package br.com.capgov.roupas.domain;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
+
+@Entity
+public class Roupa {
+	
+	private String cpf;
+	
+	@NotEmpty(message = "O campo nome é obrigatório")
+	@Size(min = 5, max = 50, message = "Tamanho inválido. Ponha entre 5 - 50")
+	@Column(name = "nome", length = 50, nullable = false)
+	private String nome;
+	private String descricao;
+	private String tamanho;
+	private int quantidade;
+	private float valor;
+	
+	public String getCpf() {
+		return cpf;
+	}
+	
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+	
+	
+	public String getNome() {
+		return nome;
+	}
+	
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	
+	public String getDescricao() {
+		return descricao;
+	}
+	
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+	
+	public String getTamanho() {
+		return tamanho;
+	}
+	
+	public void setTamanho(String tamanho) {
+		this.tamanho = tamanho;
+	}
+	
+	public int getQuantidade() {
+		return quantidade;
+	}
+	
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}
+	
+	public float getValor() {
+		return valor;
+	}
+	
+	public void setValor(float valor) {
+		this.valor = valor;
+	}
+}

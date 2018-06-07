@@ -14,11 +14,13 @@
 		<h:outputScript library="js" name="Funcoes.js"/>
 	</h:head>
 	<h:body>
+		<p:growl id="msgGlobal"/>
+	
 		<p:layout fullPage="true">
-			<p:layoutUnit position="north">
+			<p:layoutUnit header="Sistema de gerenciamento de roupas" position="north" resizable="false" closable="false" collapsible="false">
 				<ui:insert name="menu"/>
 			</p:layoutUnit>
-				<p:layoutUnit position="center">
+				<p:layoutUnit header="Sistema para fins academicos" position="center" resizable="false" closable="false" collapsible="false">
 				<ui:insert name="conteudo"/>
 			</p:layoutUnit>
 		</p:layout>
