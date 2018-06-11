@@ -1,0 +1,12 @@
+package br.com.capgov.roupas.domain;
+
+import java.math.BigDecimal;
+import java.sql.Date;
+
+public class Venda {
+	
+	private Date horario;
+	private BigDecimal valor;
+	private Vendendor vendedor;
+
+}

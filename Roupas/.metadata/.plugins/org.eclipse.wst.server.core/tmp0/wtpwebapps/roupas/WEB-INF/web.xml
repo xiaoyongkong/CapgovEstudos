@@ -50,4 +50,10 @@
   	<param-value>mint-choc</param-value>
   </context-param>
   
+  <!-- Carregamento do Contexto do Hibernate -->
+<!--   <listener>
+  	<listener-class>br.com.capgov.roupas.util.ContextListener</listener-class>
+  </listener> -->
+  
+  
 </web-app>

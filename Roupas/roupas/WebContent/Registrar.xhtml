@@ -20,7 +20,9 @@
 				<h:inputText maxlength="50" size="30"/>
 					
 				<p:outputLabel value = "Nome: "/>
-				<p:inputText id="nome" maxlength="50" size="30" value="#{MBRoupasBean.roupaRegistro.nome}"/>
+				<p:inputText maxlength="50" size="30" value="#{MBRoupasBean.roupaRegistro.nome}">
+				<!-- 	<f:validateBean/> -->
+				</p:inputText>
 				
 				<p:outputLabel value = "Descrição: " />
 				<p:inputTextarea cols="30" rows="5" value="#{MBRoupasBean.roupaRegistro.descricao}"/>

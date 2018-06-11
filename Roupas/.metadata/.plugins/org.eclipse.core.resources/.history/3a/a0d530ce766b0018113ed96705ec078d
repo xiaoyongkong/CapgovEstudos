@@ -1,0 +1,9 @@
+package br.com.capgov.roupas.domain;
+
+public class Venda {
+	
+	private Date horario;
+	private BigDecimal;
+	private Vendendor vendedor;
+
+}

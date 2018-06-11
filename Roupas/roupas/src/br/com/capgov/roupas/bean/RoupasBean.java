@@ -6,6 +6,7 @@ import br.com.capgov.roupas.util.FacesUtil;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
@@ -19,6 +20,7 @@ public class RoupasBean {
 	
 	private Roupa roupaRegistro = new Roupa();
 	private ListDataModel<Roupa> roupaConsulta;
+	private List<Venda> roupaVenda;
 	
 	public Roupa getRoupaRegistro() {
 		if(roupaRegistro == null){
@@ -39,6 +41,14 @@ public class RoupasBean {
 		this.roupaConsulta = roupaConsulta;
 	}
 	
+	public List<Venda> getRoupaVenda() {
+		return roupaVenda;
+	}
+
+	public void setRoupaVenda(List<Venda> roupaVenda) {
+		this.roupaVenda = roupaVenda;
+	}
+
 	@PostConstruct
 	public void consultar(){
 		try {
@@ -64,6 +74,10 @@ public class RoupasBean {
 			// TODO: handle exception
 			FacesUtil.adicionarMsgErro("Erro ao tentar registrar: " + e.getMessage());
 		}
+	}
+	
+	public void adicionar(Roupa roupa){
+		System.out.println(roupa);
 	}
 
 	

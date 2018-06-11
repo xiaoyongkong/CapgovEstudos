@@ -38,10 +38,38 @@
 				</p:column>
 				
 				<p:column headerText="Ação">
-					<p:commandButton value="Comprar"/>
+					<p:commandButton value="Adicionar ao Carrinho" actionListener="#{MBRoupasBean.adicionar(item)}"/>
 				</p:column>
 				
 			</p:dataTable>
+			
+			<p:separator/>
+			
+			<p:dataTable  emptyMessage="Nenhum Item no carrinho" value="#{MBRoupasBean.roupaVenda}" var="itemCarrinho">
+			
+				<p:column headerText="Nome">
+					<h:outputText value="#{itemCarrinho.roupa.nome}" />
+				</p:column>
+								
+				<p:column headerText="Tamanho">
+					<h:outputText value="#{itemCarrinho.roupa.tamanho}" />
+				</p:column>
+				
+				<p:column headerText="Quantidade">
+					<h:outputText value="#{itemCarrinho.roupa.quantidade}" />
+				</p:column>
+				
+				<p:column headerText="Valor">
+					<h:outputText value="#{itemCarrinho.valor}" />
+				</p:column>
+				
+				<p:column headerText="Ação">
+					<p:commandButton value="Remover do Carrinho"/>
+				</p:column>
+				
+			</p:dataTable>
+			
+			
 		</ui:define>
 				
 			<p:button value="Voltar" outcome="Default"/>

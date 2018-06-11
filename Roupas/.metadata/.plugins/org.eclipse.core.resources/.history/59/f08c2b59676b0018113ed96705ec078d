@@ -1,0 +1,11 @@
+package br.com.capgov.roupas.util;
+
+import javax.servlet.ServletContextListener;
+
+public class ContextListener implements ServletContextListener{
+
+	@Override
+	public void contextDestroyed(ServletContextListener){
+		
+	}
+}
